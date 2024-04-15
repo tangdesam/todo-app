@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-sm-6">
+    <label for="text" class="form-label">Task Name</label>
+    <input type="text" class="form-control" th:field="*{text}" placeholder="i.e learn java" autofocus />
+    <span th:if="${#fields.hasErrors('text')}" th:errors="*{text}" class="text-danger"></span>
+    <br/>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+    <label for="done" class="form-label">Done</label>
+    <input type="checkbox"  class="form-check-input" id="done" name="done" th:checked="*{done}" />
+    <br/>
+</div>
