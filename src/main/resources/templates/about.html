@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>About todo-app</title>
+</head>
+<body>
+    <div class="container">
+        <h1>todo-app</h1>
+        <p>
+            This project demonstrate how to implement CRUD (create, read, update, and delete) operation with Spring Boot.
+            This project is developed from backend to frontend, I hope it is shown at the commit history.
+        </p>
+        <p>
+            This project is using
+            <ul>
+                <li>Thymeleaf</li>
+                for view technologies
+                <li>Flywaydb</li>
+                for database migration tools
+                <li>Lombok</li>
+                to reduce boilerplate code
+            </ul>
+        </p>
+        <p>
+            <a th:href="@{/task/list}">todo list</a>
+        </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
