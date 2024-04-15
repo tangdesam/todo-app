@@ -77,4 +77,24 @@ public class TaskController {
         return("redirect:/task/list");
     }
 
+    @PostMapping("/delete")
+    public String delete(RedirectAttributes redirectAttributes, HttpServletRequest request) {
+        String taskId = "";
+        if (request.getParameter("taskId") != null) taskId = request.getParameter("taskId");
+
+        Task task = taskDao.findById(taskId).orElse(null);
+
+        if (task != null) {
+            taskDao.delete(task);
+            redirectAttributes.addFlashAttribute("message", "Task deleted");
+            redirectAttributes.addFlashAttribute("messageCss", "alert alert-success");
+        }
+        else {
+            redirectAttributes.addFlashAttribute("message", "Task not found");
+            redirectAttributes.addFlashAttribute("messageCss", "alert alert-danger");
+        }
+
+        return("redirect:/task/list");
+    }
+
 }
